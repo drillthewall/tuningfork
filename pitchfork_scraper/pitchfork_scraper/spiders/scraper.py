@@ -7,18 +7,19 @@ from html_text import extract_text
 
 class PitchforkSpider (scrapy.Spider):
 	name = "pitchfork_spider"
-	start_urls = ['https://pitchfork.com/reviews/albums/the-carters-everything-is-love/']
+	# start_urls = ['https://pitchfork.com/reviews/albums/the-carters-everything-is-love/']
 
-	# def start_requests(self):
-	# 	url = 'https://pitchfork.com'
-	# 	path = Path('C:\\Users\\drillthewall\\Desktop\\PROJECTS\\pitchfork_scraper\\pitchfork_scraper\\spiders\\eightPlusLinks.json')
-	# 	with path.open() as json_file:
-	# 		data = json.load(json_file)
-	# 		for review in data:
-	# 			appendurl = review['url']
-	# 			s = url + appendurl
-	# 			# print('------S IS',s)
-	# 			yield scrapy.Request(s,self.parse)
+	def start_requests(self):
+		url = 'https://pitchfork.com'
+		###!!!!!!!! CHANGE DIRECTORY !!!!!!!!###
+		path = Path('C:\\Users\\drillthewall\\Desktop\\tuningfork\\pitchfork_scraper\\pitchfork_scraper\\spiders\\eightPlusLinks.json')
+		with path.open() as json_file:
+			data = json.load(json_file)
+			for review in data:
+				appendurl = review['url']
+				s = url + appendurl
+				# print('------S IS',s)
+				yield scrapy.Request(s,self.parse)
 
 
 	def parse(self, response):
