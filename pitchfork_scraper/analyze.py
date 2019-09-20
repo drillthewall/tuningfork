@@ -71,12 +71,6 @@ def get_average_by_genre(inputgenre: str):
             return genreAverage[i]
     assert done, "Invalid genre input"
 
-
-
-
-
-
-
 # wholetext = ""
 # cnt = 0
 # for review in data:
