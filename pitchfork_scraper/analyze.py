@@ -1,4 +1,4 @@
-	import json
+import json
 import operator
 
 with open('results.json') as json_file:
